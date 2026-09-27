@@ -10,7 +10,8 @@ html {
 }
 
 #introduction,
-#shop {
+#shop,
+#gallery {
     scroll-margin-top: 90px;
 }
 
@@ -192,4 +193,17 @@ html {
     background-color: #ffcc00;
     color: black;
     transform: scale(1.1);
+}
+
+.gallery {
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.gallery img {
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    object-fit: cover;
 }
