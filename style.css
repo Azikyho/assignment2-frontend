@@ -11,7 +11,8 @@ html {
 
 #introduction,
 #shop,
-#gallery {
+#gallery,
+#about {
     scroll-margin-top: 90px;
 }
 
@@ -200,10 +201,65 @@ html {
     color: white;
     text-align: center;
     padding: 20px;
+    position: relative;
 }
 
-.gallery img {
+.gallery-item {
+    position: relative;
+    display: inline-block;
+}
+
+.gallery-item img {
+    width: 400px;
+    height: 250px;
     border-radius: 10px;
-    transition: transform 0.3s ease;
+    transition: filter 0.3s ease, transform 0.3s ease;
     object-fit: cover;
+    display: block;
+}
+
+.gallery-images {
+    display: grid;
+    grid-template-columns: repeat(3, 400px);
+    justify-content: center;
+    gap: 30px;
+}
+
+.image-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    filter: brightness(40%);
+    cursor: pointer;
+}
+
+.gallery-item:hover .image-caption {
+    opacity: 1;
+}
+
+.about {
+    background-color: #232323;
+    color: #ffffff;
+    padding: 20px;
+    height: auto;
+}
+
+.about h2, h1 {
+   text-align: center;
+}
+
+.about p {
+    text-align: left;
 }
