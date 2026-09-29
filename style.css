@@ -16,7 +16,21 @@ html {
     scroll-margin-top: 90px;
 }
 
+
+.page-layout {
+    display: grid;
+
+    grid-template-columns: 95px 1fr;
+    grid-template-rows: 90px auto auto;
+
+    grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+}
+
 .header {
+    grid-area: header;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -70,12 +84,12 @@ html {
     color: #ffcc00;
 }
 
-.page-layout {
-    display: grid;
-    grid-template-columns: 95px 1fr;
+.main {
+    grid-area: main;
 }
 
 .sidebar {
+    grid-area: sidebar;
     background-color: #151515;
     padding: 20px;
     width: 95px;
@@ -166,6 +180,7 @@ html {
 }
 
 .footer {
+    grid-area: footer;
     background-color: #111;
     color: white;
     display: flex;
@@ -207,12 +222,13 @@ html {
 .gallery-item {
     position: relative;
     display: inline-block;
+    overflow: hidden;
+    border-radius: 10px;
 }
 
 .gallery-item img {
     width: 400px;
     height: 250px;
-    border-radius: 10px;
     transition: filter 0.3s ease, transform 0.3s ease;
     object-fit: cover;
     display: block;
@@ -256,7 +272,8 @@ html {
     height: auto;
 }
 
-.about h2, h1 {
+.about h2,
+.about h1 {
    text-align: center;
 }
 
